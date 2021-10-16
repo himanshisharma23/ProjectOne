@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    background: #fc5e03;
+}
+.finished-game-box{
+    width: 300px;
+    height: 150px;
+    top: 25%;
+    left: 25%;
+    bottom: 25%;
+    right: 25%;
+    z-index: 2;
+    margin: auto;
+    text-align: center;
+    visibility: hidden;
+    background: white;
+    position: fixed;
+    border: 2px solid #fc5e03;
+}
+.game-over-message{
+    width: 100%;
+    height: 70%;
+    text-align: left;
+    font-family:'Courier New', Courier, monospace;
+    color: #fc5e03;
+    font-weight: bold;
+    padding: 4%;
+}
+.end-game-btn{
+    width: 170px;
+    height: 25%;
+    border-radius: 40px;
+    font-size: x-large;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    background: #fc5e03;
+    color: white;
+    border: 2px solid white;
+}
+.container{
+    width: 640px;
+    height: 640px;
+    margin: auto;
+}
+.header-div{
+    width: calc(100%-10px);
+    height: calc(10%-10px);
+    margin: 5px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+.memory-game{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+.memory-card{
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.memory-card:active{
+    transform: scale(.97);
+    transition: transform .2s;
+}
+.memory-card.flip{
+    transform: rotateY(180deg);
+}
+.front-face, .back-face{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fc8403;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front-face{
+    transform: rotateY(180deg);
+}
